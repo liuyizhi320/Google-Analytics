@@ -15,7 +15,7 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-80008755-1', 'auto');
+    ga('create', 'UA-xxxxxxx-y', 'auto');
     ga(function(tracker) {
 
         // Grab a reference to the default sendHitTask function.
