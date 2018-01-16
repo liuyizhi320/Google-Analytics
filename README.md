@@ -63,3 +63,26 @@ https://developers.google.com/analytics/devguides/collection/analyticsjs/tasks<b
     ga('send', 'pageview');
 </script>
 ```
+
+
+* local http request 3
+
+``` javascript 
+<script>
+
+ga(function(tracker) {
+
+  // Grab a reference to the default sendHitTask function.
+  var originalSendHitTask = tracker.get('sendHitTask');
+
+  // Modifies sendHitTask to send a copy of the request to a local server after
+  // sending the normal request to www.google-analytics.com/collect.
+  tracker.set('sendHitTask', function(model) {
+    originalSendHitTask(model);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/localhits', true);
+    xhr.send(model.get('hitPayload'));
+  });
+});
+</script>
+```
