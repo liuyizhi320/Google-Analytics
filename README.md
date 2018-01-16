@@ -1,6 +1,34 @@
 # Google-Analytics
 
-* local http request
+* local http request 1
+
+``` javascript 
+<script>
+  
+  ga('create', 'UA-80008755-1', 'auto');
+  
+ ga(function(tracker) {
+
+
+  // Modifies sendHitTask to send a copy of the request to a local server after
+  // sending the normal request to www.google-analytics.com/collect.
+  tracker.set('sendHitTask', function(model) {
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/localhits' + '?' + model.get('hitPayload'), true);
+    xhr.send();
+  });
+});
+  
+  ga('send', 'pageview');
+
+</script>
+```
+
+
+
+* local http request 2
+
 ``` javascript 
 <script>
     (function(i, s, o, g, r, a, m) {
