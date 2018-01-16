@@ -1,6 +1,7 @@
 # Google-Analytics
 
 https://developers.google.com/analytics/devguides/collection/analyticsjs/tasks<br>
+https://stackoverflow.com/questions/31034925/storing-and-retrieving-specific-data-in-google-analytics<br>
 
 * local http request 1
 
