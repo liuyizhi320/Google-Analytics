@@ -26,7 +26,8 @@ ga(function(tracker) {
   tracker.set('sendHitTask', function(model) {
   //  originalSendHitTask(model);
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/localhits.gif' + '?' + model.get('hitPayload'), true);
+    xhr.open('GET', 'https://easternmiles.ceair.com/mpf/assets/images/logo.png' + '?' + model.get('hitPayload'), true);
+   // xhr.open('GET', '/localhits.gif' + '?' + model.get('hitPayload'), true);
     xhr.send();
   });
 });
